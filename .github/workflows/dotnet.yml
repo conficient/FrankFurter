@@ -16,10 +16,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Install dependencies
+      working-directory: ./src
       run: dotnet restore
     - name: Build
+      working-directory: ./src
       run: dotnet build --configuration Release --no-restore
     - name: Test
+      working-directory: ./src
       run: dotnet test --no-restore --verbosity normal
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2  
