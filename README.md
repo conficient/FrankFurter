@@ -5,6 +5,8 @@
 
 This library is a C# API for accessing the Frankfurter foreign exchange rate API.
 
+[![.NET Core build pack and push](https://github.com/conficient/FrankFurter/actions/workflows/dotnet.yml/badge.svg)](https://github.com/conficient/FrankFurter/actions/workflows/dotnet.yml)
+
 ### Installation
 
 Install the [Nuget package](https://www.nuget.org/packages/FrankFurter/) in your .NET application:
