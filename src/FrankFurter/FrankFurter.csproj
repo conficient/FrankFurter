@@ -3,14 +3,25 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Company>conficient</Company>
-    <Description>A C# wrapper for the /https://www.frankfurter.app/ currency API from the European Central Bank.</Description>
+    <Description>A C# wrapper for the https://www.frankfurter.app/ currency API from the European Central Bank.</Description>
     <Copyright>(c) conficient 2021</Copyright>
     <PackageTags>api currency conversion c# currencylayer exchangerate finance</PackageTags>
+    <Version>1.0.0</Version>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/conficient/FrankFurter</PackageProjectUrl>
+    <PackageIcon>favicon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="favicon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
