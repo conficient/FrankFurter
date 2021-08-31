@@ -29,9 +29,4 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Files\currencies.json" />
-    <None Remove="Files\Historical.json" />
-  </ItemGroup>
-
 </Project>

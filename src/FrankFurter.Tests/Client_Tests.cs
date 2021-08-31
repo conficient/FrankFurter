@@ -57,7 +57,7 @@ namespace FrankFurter.Tests
             Assert.Equal("EUR", actual.Base);
             Assert.Equal(dateFrom, actual.Date);
 
-            Assert.Equal(32, actual.Rates.Count);
+            Assert.Equal(27, actual.Rates.Count); // there are only 27 rates in 1999 dataset
 
             // check a rate
             Assert.True(actual.Rates.ContainsKey("AUD"));

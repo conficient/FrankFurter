@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -34,6 +33,15 @@ namespace FrankFurter
             networkAPI?.Dispose();
         }
 
+        /// <summary>
+        /// Deserialization options 
+        /// </summary>
+        readonly JsonSerializerOptions options = new JsonSerializerOptions()
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true
+        };
+
         #region Quick lookup methods
 
         /// <summary>
@@ -54,7 +62,7 @@ namespace FrankFurter
             }
         }
 
-        
+
         /// <summary>
         /// Get the rate for currency on specific date
         /// </summary>
@@ -63,7 +71,7 @@ namespace FrankFurter
         /// <param name="baseCurrency">Base currency, default is EUR</param>
         /// <param name="amount">Amount to convert (Default is 1)</param>
         /// <returns>Converted amount if the currency was found, otherwise null</returns>
-        public static async Task<decimal?> GetRateForAsync(DateTime date, 
+        public static async Task<decimal?> GetRateForAsync(DateTime date,
                                                            string currencyCode,
                                                            string baseCurrency = EUR,
                                                            decimal amount = 1m)
@@ -121,7 +129,7 @@ namespace FrankFurter
                 .Add(AMT, amount);
 
             var result = await networkAPI.QueryAsync(url.ToString());
-            return await JsonSerializer.DeserializeAsync<SingleDate>(result);
+            return await JsonSerializer.DeserializeAsync<SingleDate>(result, options);
         }
 
 
@@ -151,7 +159,7 @@ namespace FrankFurter
                 .Add(AMT, amount);
 
             var result = await networkAPI.QueryAsync(url.ToString());
-            return await JsonSerializer.DeserializeAsync<SingleDate>(result);
+            return await JsonSerializer.DeserializeAsync<SingleDate>(result, options);
         }
 
         /// <summary>
@@ -193,7 +201,7 @@ namespace FrankFurter
                 .Add(AMT, amount);
 
             var result = await networkAPI.QueryAsync(url.ToString());
-            return await JsonSerializer.DeserializeAsync<TimeSeries>(result);
+            return await JsonSerializer.DeserializeAsync<TimeSeries>(result, options);
         }
 
 
